@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esencia de barro</title>
+
+   <!-- Cargo el vídeo con prioridad baja y le pongo imagen de carga -->
+   <link rel="preload" as="video" href="assets/barro_video.mp4" type="video/mp4">
+
+   <!-- Mi css principal -->
+   <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="header__video-container">
+            <video class="main__video" autoplay muted loop playsinline preload="none" poster="assets/poster.jpg">
+                <source src="assets/barro_video.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </div>
+        
+        <div class="header__esencia">
+            <h1 class="header__h1">Esencia de barro</h1>
+            <nav class="header__nav">
+            <ul class="header__ul">
+                 <li class="header__li"> <a href="champu.html">Champú</a>
+                 </li>
+                 <li class="header__li"> <a href="barros.html">Barros</a>
+                 </li>
+                 <li class="header__li"> <a href="conocenos.html">Conocenos</a>
+                 </li>
+                 <li class="header__li"> <a href="citas.html">Citas</a>
+                 </li>
+            </ul>
+         <!-- Creo un header basico para hacer una introducción -->
+        </nav>
+        </div>
+        
+    </header>
+
+    
+</body>
+</html>
