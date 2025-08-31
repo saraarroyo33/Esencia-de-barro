@@ -1,0 +1,561 @@
+:root {
+    font-size : 100%;
+    font-family : system-ui, sans-serif;
+    scroll-behavior : smooth;
+  }
+  * , *::before , *::after {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    box-sizing : border-box;
+    vertical-align : baseline;
+  }
+  *::before , *::after {
+    display : block;
+  }
+  img , picture , video , iframe , figure , canvas {
+    max-width : 100%;
+    display : block;
+    width : 100%;
+    height : initial;
+    object-fit : cover;
+    object-position : center center;
+  }
+  a {
+    display : block;
+    text-decoration : none;
+    color : inherit;
+    font :  inherit;
+  }
+  p a {
+    display : inline;
+  }
+  li , menu, summary {
+    list-style-type : none;
+  }
+  ol {
+    counter-reset : revert;
+  }
+  h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+    font :  inherit;
+    text-decoration :  none;
+    color : inherit;
+    overflow-wrap : break-word;
+    text-wrap : pretty;
+  }
+  mark {
+    background-color : transparent;
+  }
+  blockquote::before , blockquote::after , q::before , q::after {
+    content : none;
+  }
+  form , input , textarea , select , button , label {
+    font :  inherit;
+    hyphens : auto;
+    background-color : transparent;
+    color : inherit;
+    display : block;
+    appearance : none;
+  }
+  fieldset {
+    border : none;
+  }
+  ::placeholder {
+    color : unset;
+  }
+  button , label {
+    cursor : pointer;
+  }
+  table , tr , td , th , tbody , thead , tfoot {
+    border-collapse : collapse;
+    border-spacing : 0;
+    font : inherit;
+  }
+  svg {
+    width : 100%;
+    display : block;
+    fill : currentColor;
+  }
+  body {
+    min-height : 100vh;
+    line-height : 1.5em;
+    color : inherit;
+    hyphens : auto;
+    font-smooth : always;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+    overflow-x: hidden;
+  }
+
+  .header {
+    position: relative; /* Elemento posicionado relativamente para poder usar posicionamientos absolutos en su interior */
+    width: 100%;
+    min-height: 100vh; /* Ocupa el alto completo de la pantalla */
+    object-fit: cover; /* No afecta en divs, suele ser redundante */
+    
+  }
+
+.header__fondo{
+  position: absolute; /* Fondo absoluto dentro del header */
+  width: 100%;
+  height: 100vh; /* Se asegura de cubrir todo el alto del viewport */
+  overflow: hidden; /* Oculta desbordes de imagen */
+  opacity: 0.9; /* Da un pequeño efecto de transparencia */
+  
+
+}
+
+.header__fondo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Imagen ocupa todo el contenedor sin deformarse */
+  display: block;
+}
+
+  .header__h1 {
+
+  position: absolute; /* Centrado total usando transform */
+  color: rgb(45, 26, 1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  font-family:""; /* Falta especificar fuente */
+  font-weight:700;
+  letter-spacing: 2px;
+  text-transform:uppercase;
+  text-align: center;    
+  }
+  
+  .header__barra{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap ; /* Flex en fila sin saltos de línea */
+    justify-content: start; /* Elementos alineados a la izquierda */
+    align-items: start;
+  
+  }
+  .header__logo{
+    
+     width: 12%; 
+     min-height: 2vh;
+     margin-top: 30px;
+     object-fit: cover;
+  }
+  
+  .header__nav {
+    opacity: 0; /* Oculto hasta que se añada la clase visible */
+    pointer-events: none;
+    transform: translateX(-20px); /* Ligeramente desplazado a la izquierda */
+    transition: opacity 0.7s ease, transform 5s ease; /* Suave aparición */
+    position: absolute;
+    left:10%;
+    margin-left: 20px;
+  }
+  
+  .header__nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0); /* El nav vuelve a su posición natural */
+  }
+  
+  .header__ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 25px; /* Espaciado entre enlaces */
+    margin-top: 110px;
+    font-size: 1.2rem;
+    font-family:"";
+    font-weight:800;
+    text-transform:uppercase;
+    color: rgb(45, 26, 1);
+    
+  }
+  
+  .header__li a {
+     
+     transition: color 0.3s ease, border-bottom 0.3s ease; /* Transición de color del li seleccionado */
+   
+  }
+  
+  .header__li a:hover {
+      
+     border-bottom: 2px solid  rgb(45, 26, 1); /* Línea al pasar el ratón */
+  }
+
+@media (max-width: 788px) {
+  .header__fondo{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    
+    
+  }
+
+  .header__h1 {
+    font-size: 4rem; /* Reduce tamaño del título en pantallas pequeñas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+        
+  }
+  .header__logo{
+    width: 20%; 
+    min-height: 2vh;
+    margin-top: 20px;
+  }
+  .header__nav{
+    left:18%; /* Para que el logo se coloque al lado del logo */
+  }
+
+  .header__ul {
+    margin-top: 80px;
+      
+  }
+  
+  }
+
+  @media (max-width: 480px) {
+    .header{
+      width: 100%;
+      min-height: 100vh;
+  
+    }
+  
+    .header__h1 {
+      font-size: 4rem;  
+      }
+  
+      .header__logo{
+        width: 40%; 
+        min-height: 3vh;
+        margin-top: 30px;
+        
+     }
+  
+     .header__nav{
+      left:30%; /* Ajusto el espacio para que cuadre cuando hago la pantalla más pequeña */
+      
+    }
+  
+    .header__ul {
+      margin-top: 95px;
+      font-size: 0.9rem;
+      gap: 15px;
+      
+    }
+  }
+
+.main{
+    
+    width: 100%;
+
+}
+
+
+.main__galeria {
+  position: relative;
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px;
+
+    display: grid;
+    justify-content: center; /* Centra si hay menos de 3 */
+    grid-template-columns: repeat(auto-fill, 350px); /* Creo tantas columnas como quepan automáticamente, cada una de 350px */
+    gap: 50px;
+     
+}
+
+.main__champus {
+    
+    text-align: center;
+    
+}
+
+.main__imagen-coco, .main__imagen-cacao, .main__imagen-aguacate, .main__imagen-almendra, .main__imagen-jengibre, .main__imagen-lavanda, .main__imagen-sal, .main__imagen-miel {
+    position: relative;
+    width: 100%;
+    height: 50vh;/* si pongo min-height se me deforma*/
+
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.main__imagen {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover; /* Ajusta bien la imagen sin deformarla */
+    display: block;
+}
+
+.main__texto-coco, .main__texto-cacao, .main__texto-aguacate, .main__texto-almendra, .main__texto-jengibre, .main__texto-lavanda, .main__texto-sal, .main__texto-miel {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   min-height: 100%;
+   background: rgba(0, 0, 0, 0.6);
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   text-align: center;
+   padding: 15px;
+   opacity: 0;
+   transition: opacity 0.5s ease; /* Transición de opacidad */
+}
+.main__imagen-coco:hover .main__texto-coco,
+.main__imagen-cacao:hover .main__texto-cacao,
+.main__imagen-aguacate:hover .main__texto-aguacate,
+.main__imagen-almendra:hover .main__texto-almendra,
+.main__imagen-jengibre:hover .main__texto-jengibre,
+.main__imagen-lavanda:hover .main__texto-lavanda,
+.main__imagen-sal:hover .main__texto-sal,
+.main__imagen-miel:hover .main__texto-miel {
+    opacity: 0.9;
+}
+
+.main__titulo {
+    margin-top: 10px;
+}
+
+.main__coco, .main__cacao, .main__aguacate, .main__almendra, .main__jengibre, .main__lavanda, .main__sal, .main__miel {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(2, 64, 55);
+}
+
+.main__mejora-coco, .main__mejora-cacao, .main__mejora-aguacate, .main__mejora-almendra, .main__mejora-jengibre, .main__mejora-lavanda, .main__mejora-sal, .main__mejora-miel {
+    font-size: 1em;
+    color: rgb(22, 120, 106);
+}
+
+@media (max-width: 788px) {
+  .main__galeria {
+      grid-template-columns: repeat(auto-fill, 350px); /* Se ajusta según el tamaño*/
+      gap: 30px; 
+  }
+
+}
+
+@media (max-width: 480px) {
+  .main__galeria {
+
+      grid-template-columns: repeat(auto-fill, 250px); 
+  }
+
+}
+
+
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
+ 
+}
+
+.footer__fondo{
+
+  position: absolute; /* Pongo un fondo */
+  width: 100%;
+  height: 100%;
+  z-index: 0;/* Obligo al fondo a onerse por detrás de los textos o imagenes */
+  overflow: hidden;
+  
+}
+
+.footer__fondo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.footer__contenido{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  padding: 30px;
+}
+.footer__sub{
+  width: 70%;
+  position: relative;
+  padding: 20px;
+  gap: 40px;
+  font-family:"";
+  
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.footer__h3{
+  font-size: 2rem;
+  line-height: 1.1; 
+  
+  font-weight:800; /* Negrita */
+  text-transform:uppercase; /* Mayusculas */
+  padding: 20px;
+  margin: 2px;
+
+}
+.footer__email{
+  width: 50%;
+  color: rgb(113, 113, 113);
+  padding: 0.4rem;
+  font-size: 1.1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-family:"";
+ 
+  transition: border-color 0.2s;
+}
+
+.footer__button {
+  background-color: #ffffff; 
+  
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  
+  font-weight: bold;
+  
+
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  transition: background-color 0.3s ease; /* cada vez que hago click en el botón se pone de color verde, esta es la transicoón 3 seg */
+  
+  
+}
+
+.footer__button.cambio-color {
+  background-color: rgb(1, 53, 45); /* Verde oscuro de tu paleta al hacer clic */
+  color: #fff; /* Texto blanco para contraste */
+}
+
+
+.footer__info{
+  
+  position: relative; 
+
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
+   width: 70%;
+   
+   margin: 0 auto;
+   padding: 20px;
+
+}
+
+.footer__redes {
+  
+  display: flex;
+  flex-direction: column;
+  
+  gap: 15px;
+  font-family:"";
+  color:  rgb(2, 64, 55);
+
+}
+
+.footer__red{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.footer__redes-icono {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, 
+  filter 0.3s ease;
+
+}
+
+.footer__redes-icono:hover {
+  transform: scale(1.1);/* se escala los logos cada vez que paso el ratón */
+}
+
+/* Mapa */
+.footer__maps {
+  width: 50%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__direccion {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  font-weight: bold;
+ 
+}
+
+/* Responsivo */
+@media (max-width: 788px) {
+  .footer {
+    width: 100%;
+    flex-direction: row;
+
+  }
+  .footer__sub{
+    width: 90%;
+  }
+  .footer__email {
+    width: 100%; /* Ocupa todo el ancho */
+    font-size: 1rem;
+}
+  .footer__button {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+}
+.footer__info{
+  width: 100%;
+}
+  .footer__maps {
+    width: 60%; 
+    text-align: center;
+    
+  }
+
+  .footer__direccion {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__info{
+    display: flex;
+    flex-flow: column;
+    gap: 40px;
+  }
+  .footer__email {
+    width: 100%; /* Ocupa todo el ancho */
+    font-size: 1rem;
+}
+
+.footer__button {
+    padding: 0.4rem 0.7rem;
+    font-size: 1rem;
+}
+}

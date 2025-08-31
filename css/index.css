@@ -1,0 +1,209 @@
+
+:root {
+    font-size : 100%;
+    font-family : system-ui, sans-serif;
+    scroll-behavior : smooth;
+  }
+  * , *::before , *::after {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    box-sizing : border-box;
+    vertical-align : baseline;
+  }
+  *::before , *::after {
+    display : block;
+  }
+  img , picture , video , iframe , figure , canvas {
+    max-width : 100%;
+    display : block;
+    width : 100%;
+    height : initial;
+    object-fit : cover;
+    object-position : center center;
+  }
+  a {
+    display : block;
+    text-decoration : none;
+    color : inherit;
+    font :  inherit;
+  }
+  p a {
+    display : inline;
+  }
+  li , menu, summary {
+    list-style-type : none;
+  }
+  ol {
+    counter-reset : revert;
+  }
+  h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+    font :  inherit;
+    text-decoration :  none;
+    color : inherit;
+    overflow-wrap : break-word;
+    text-wrap : pretty;
+  }
+  mark {
+    background-color : transparent;
+  }
+  blockquote::before , blockquote::after , q::before , q::after {
+    content : none;
+  }
+  form , input , textarea , select , button , label {
+    font :  inherit;
+    hyphens : auto;
+    background-color : transparent;
+    color : inherit;
+    display : block;
+    appearance : none;
+  }
+  fieldset {
+    border : none;
+  }
+  ::placeholder {
+    color : unset;
+  }
+  button , label {
+    cursor : pointer;
+  }
+  table , tr , td , th , tbody , thead , tfoot {
+    border-collapse : collapse;
+    border-spacing : 0;
+    font : inherit;
+  }
+  svg {
+    width : 100%;
+    display : block;
+    fill : currentColor;
+  }
+  body {
+    min-height : 100vh;
+    line-height : 1.5em;
+    color : inherit;
+    hyphens : auto;
+    font-smooth : always;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+  }
+
+.header {
+    
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    text-shadow: 1px 1px 1px rgba(67, 67, 67, 0.8); /* Sombra para resaltar */
+}
+
+.header__video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Para que ocupe toda la pantalla */
+  overflow: hidden;
+  
+}
+
+.main__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto hace que el vídeo se escale y recorte bien */
+  
+      
+}
+
+.header__esencia{
+    position: relative; /* Para poner por delante el titulo y el nav */
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.header__h1 {
+    color: rgb(1, 53, 45);
+    width: 100%;
+    min-height: 1vh;
+    line-height: 1.1; 
+
+    
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family:"";
+    font-weight:700; /* Negrita */
+    letter-spacing: 2px;
+    text-transform:uppercase; /* Mayusculas */
+    text-align: center;
+}
+
+
+.header__nav {
+    bottom: 20px;
+    width: 100%;
+
+    font-size: 1.5rem;
+    display: flex; /* Para poner en fila los items */
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;  
+    text-align: center;
+
+    color: rgb(0, 40, 35);
+}
+
+
+.header__ul {
+
+    display: flex; 
+    gap: 20px; 
+}
+    
+   
+.header__li {
+    margin: 0 20px;
+    font-family:"";
+    font-weight:900; /* Negrita */
+    letter-spacing: 2px;
+    text-transform:uppercase; 
+    
+}.header__li a {
+  display: inline-block; /* Ajusta el largo del subrayado a la palabra */
+}
+
+.header__li:hover a {
+  
+  font-size: 1em; /* Se hace mas pequeño cuando paso el ratón*/
+  border-bottom: 2px solid  rgb(0, 40, 35);
+  
+}
+
+
+@media (max-width: 768px) {
+    .header__h1 {
+        font-size: 3rem;
+    }
+
+    .header__li--a {
+        font-size: 1.2rem;
+    }
+
+    .header__ul {
+        flex-direction: column; /* Cuando reduzco la pantalla el nav se ppone en columna */
+    }
+
+    .header__li {
+        margin-bottom: 10px;
+    }
+    
+   
+}
+

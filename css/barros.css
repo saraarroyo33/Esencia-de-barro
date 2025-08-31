@@ -1,0 +1,468 @@
+:root {
+    font-size : 100%;
+    font-family : system-ui, sans-serif;
+    scroll-behavior : smooth;
+  }
+  * , *::before , *::after {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    box-sizing : border-box;
+    vertical-align : baseline;
+  }
+  *::before , *::after {
+    display : block;
+  }
+  img , picture , video , iframe , figure , canvas {
+    max-width : 100%;
+    display : block;
+    width : 100%;
+    height : initial;
+    object-fit : cover;
+    object-position : center center;
+  }
+  a {
+    display : block;
+    text-decoration : none;
+    color : inherit;
+    font :  inherit;
+  }
+  p a {
+    display : inline;
+  }
+  li , menu, summary {
+    list-style-type : none;
+  }
+  ol {
+    counter-reset : revert;
+  }
+  h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+    font :  inherit;
+    text-decoration :  none;
+    color : inherit;
+    overflow-wrap : break-word;
+    text-wrap : pretty;
+  }
+  mark {
+    background-color : transparent;
+  }
+  blockquote::before , blockquote::after , q::before , q::after {
+    content : none;
+  }
+  form , input , textarea , select , button , label {
+    font :  inherit;
+    hyphens : auto;
+    background-color : transparent;
+    color : inherit;
+    display : block;
+    appearance : none;
+  }
+  fieldset {
+    border : none;
+  }
+  ::placeholder {
+    color : unset;
+  }
+  button , label {
+    cursor : pointer;
+  }
+  table , tr , td , th , tbody , thead , tfoot {
+    border-collapse : collapse;
+    border-spacing : 0;
+    font : inherit;
+  }
+  svg {
+    width : 100%;
+    display : block;
+    fill : currentColor;
+  }
+  body {
+    min-height : 100vh;
+    line-height : 1.5em;
+    color : inherit;
+    hyphens : auto;
+    font-smooth : always;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover; /* Aquí quiero que el fondo siempre se adapte a la pantalla completa */
+}
+
+.header__fondo{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0.9; /* Le bajo un poco la opacidad para que el título destaque más */
+}
+
+.header__fondo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Me aseguro de que la imagen siempre rellene todo el fondo sin deformarse */
+  display: block;
+}
+
+.header__h1 {
+    width: 100%;
+    position: absolute;
+    color: rgb(45, 26, 1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    font-family:"";
+    font-weight:700; /* El título quiero que sea bien grande y en negrita para que sea el centro de atención */
+    letter-spacing: 2px;
+    text-transform:uppercase;
+    text-align: center;     
+}
+
+.header__barra{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap ;
+    justify-content: start;
+    align-items: start;
+    /* Aquí coloco el logo a la izquierda para seguir una estructura clásica */
+}
+
+.header__logo{
+     width: 12%; 
+     min-height: 2vh;
+     margin-top: 30px;
+     object-fit: cover; /* El logo lo dejo con object-fit por si cambia la proporción */
+}
+
+.header__nav {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-20px);
+    transition: opacity 0.7s ease, transform 5s ease; /* Me gusta el efecto de aparecer con un poco de movimiento */
+    position: absolute;
+    left:10%;
+    margin-left: 20px;
+}
+
+.header__nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.header__ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 25px;
+    margin-top: 110px;
+    font-size: 1.2rem;
+    font-family:"";
+    font-weight:800;
+    text-transform:uppercase;
+    color: rgb(45, 26, 1);
+    /* Aquí quiero que el menú tenga espacio entre opciones y esté bien visible */
+}
+
+.header__li a {
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.header__li a:hover {
+    border-bottom: 2px solid  rgb(45, 26, 1); /* Me gusta que al pasar el ratón se subraye para saber en qué opción estoy */
+}
+
+  /* Ajuste para móviles */
+@media (max-width: 788px) {
+  .header__fondo{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Oculto lo que sobresale para evitar scroll innecesario */
+    object-fit: cover; /* Aseguro que la imagen cubra todo sin deformarse */
+  }
+  .header__h1 {
+    font-size: 4rem; /* Ajusto tamaño del título para pantallas medianas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .header__logo{
+    width: 20%; /* Reduzco el logo para que no ocupe demasiado espacio */
+    min-height: 2vh;
+    margin-top: 20px;
+  }
+  .header__nav{
+    left:18%; /* Desplazo la navegación un poco hacia la derecha */
+  }
+  .header__ul {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header{
+    width: 100%; /* Uso todo el ancho en móviles muy pequeños */
+    min-height: 100vh;
+  }
+  .header__h1 {
+    font-size: 3rem; /* Hago el título más pequeño para pantallas pequeñas */
+  }
+  .header__logo{
+    width: 40%; /* Aumento tamaño del logo para mejorar visibilidad */
+    min-height: 3vh;
+    margin-top: 30px;
+  }
+  .header__nav{
+    left:30%; /* Muevo más la navegación para que encaje mejor */
+  }
+  .header__ul {
+    margin-top: 95px;
+    font-size: 0.9rem; /* Ajusto tamaño de fuente para legibilidad */
+    gap: 15px;
+  }
+}
+
+
+.main__barro {
+  background-color: #fff;
+  width: 80%;
+  min-height:20vh ;
+  margin: 50px auto;
+  padding: 40px;
+  display: flex; /* Uso flexbox para alinear los elementos de manera flexible */
+  justify-content: space-between; /* Dejo espacio entre el texto y la imagen */
+  align-items: center; /* Centro los elementos verticalmente */
+  border-radius: 16px; /* Pongo esquinas redondeadas para que se vea más moderno */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra para darle algo de profundidad */
+  overflow: hidden;
+  gap: 40px;
+  transition: all 0.3s ease; /* Animación suave cuando cambio el estado */
+}
+
+.main__barro--reverse {
+  flex-direction: row-reverse; /* Cambio el orden para alternar disposición de los bloques */
+}
+
+.main__imagen {
+  width: 100%;
+  min-height: 50vh; /* Así me aseguro de que la imagen tenga altura mínima */
+  max-width: 300px;
+  object-fit: cover; /* Mantengo proporciones y relleno el contenedor */
+  border-radius: 10px;
+}
+
+.main__titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-family:"";
+  text-transform:uppercase;
+  color: rgb(2, 64, 55);
+}
+
+.main__descripcion {
+  font-size: 1.125rem;
+  color: #555;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-family:"";
+  transition: opacity 0.8s ease, max-height 0.8s ease; /* Animo la aparición del texto con opacidad y altura */
+}
+
+.main__barro:hover .main__descripcion {
+  opacity: 1;
+  max-height: 500px; /* Expando el texto al pasar el ratón para mostrar la descripción */
+}
+
+@media (max-width: 788px) {
+  .main__barro {
+    flex-direction: column; /* Cambio a columna para mejor adaptación en móvil */
+    gap: 20px;
+    min-height: 15vh;
+  }
+
+  .main__titulo{
+    text-align: center; /* Centro el texto cuando estoy en pantallas pequeñas */
+    margin-top: 20px;
+  }
+
+  .main__barro--reverse {
+    flex-direction: column; /* En móvil, no me interesa invertir el orden, siempre columna */
+  }
+
+  .main__imagen {
+    width: 100%;
+    min-height: 40vh; /* Reduzco un poco la altura mínima en móviles */
+    max-width: 300px;
+  }
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden; /* Así evito que se vea cualquier contenido que sobresalga */
+}
+
+.footer__fondo{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Coloco el fondo debajo del resto del contenido */
+  overflow: hidden;
+}
+
+.footer__fondo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hago que la imagen de fondo se ajuste sin deformarse */
+}
+
+.footer__contenido{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  padding: 30px;
+}
+
+.footer__sub{
+  width: 70%;
+  position: relative;
+  padding: 20px;
+  gap: 40px;
+  font-family:"";
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px; /* Le doy esquinas redondeadas para que se vea más limpio */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Le pongo sombra para darle profundidad */
+}
+
+.footer__h3{
+  font-size: 2rem;
+  line-height: 1.1; 
+  font-weight:800; /* Pongo el texto en negrita para que resalte */
+  text-transform:uppercase;
+  padding: 20px;
+  margin: 2px;
+}
+
+.footer__email{
+  width: 50%;
+  color: rgb(113, 113, 113);
+  padding: 0.4rem;
+  font-size: 1.1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-family:"";
+  transition: border-color 0.2s; /* Me gusta que el borde cambie suavemente al interactuar */
+}
+
+.footer__button {
+  background-color: #ffffff; 
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease; /* Animo el cambio de color al pasar el ratón */
+}
+
+.footer__button.cambio-color {
+  background-color: rgb(1, 53, 45); /* Uso el color verde oscuro cuando se cambia la clase */
+  color: #fff;
+}
+
+.footer__info{
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer__redes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family:"";
+  color:  rgb(2, 64, 55);
+}
+
+.footer__redes-icono {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Me gusta que el icono haga zoom suave */
+}
+
+.footer__redes-icono:hover {
+  transform: scale(1.1);
+}
+
+/* Mapa */
+.footer__maps {
+  width: 50%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__direccion {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* Responsivo */
+@media (max-width: 788px) {
+  .footer {
+    width: 100%;
+    flex-direction: row;
+  }
+  .footer__sub{
+    width: 90%; /* Amplío el bloque porque en móviles necesito más espacio */
+  }
+  .footer__email {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .footer__info{
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__info{
+    display: flex;
+    flex-flow: column;
+    gap: 40px; /* Añado espacio entre columnas en móviles */
+  }
+  .footer__email {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .footer__button {
+    padding: 0.4rem 0.7rem;
+    font-size: 1rem;
+  }
+}
