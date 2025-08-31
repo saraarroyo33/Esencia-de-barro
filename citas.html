@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>citas</title>
+    <link rel="stylesheet" href="css/citas.css">
+    <script src="js/champu.js" defer></script>
+</head>
+<header class="header"> <!-- Inicio el encabezado de la página -->
+    <div class="header__fondo"> <!-- Añado el fondo de la portada -->
+        <img src="assets/citas.webp" alt="portada" class="header__portada"> 
+    </div>
+
+    <h1 class="header__h1">Citas</h1> <!-- Coloco el título principal -->
+
+    <div class="header__barra"> <!-- Creo la barra de navegación -->
+        <img src="assets/logo.webp" alt="logo" class="header__logo" id="logo">
+        <nav class="header__nav" id="navMenu"> <!-- Configuro el menú de navegación -->
+            <ul class="header__ul">
+                <li class="header__li"> <a href="champu.html">Champú</a></li>
+                <li class="header__li"> <a href="barros.html">Barros</a></li>
+                <li class="header__li"> <a href="conocenos.html">Conocenos</a></li>
+            </ul> 
+        </nav>
+    </div>  
+</header>
+
+<main class="main"> <!-- Inicio la sección principal -->
+    <form action="#" method="get" enctype="multipart/form-data" class="main__form"> <!-- Creo el formulario para citas -->
+        <div class="main__formulario">
+            <h1 class="main__h1">Pide tu cita en Esencia de Barro</h1> <!-- Título del formulario -->
+
+            <div class="main__input-group">
+                <input type="text" name="nombre" id="nombre" class="main__input main__input--nombre" placeholder="Nombre" required>
+            </div>
+
+            <div class="main__input-group">
+                <input type="tel" name="telefono" id="telefono" class="main__input main__input--telefono" placeholder="Teléfono" minlength="9" maxlength="9" required>
+            </div>
+
+            <div class="main__input-group">
+                <label for="fecha" class="main__label">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" class="main__input main__input--fecha" required>
+            </div>
+
+            <div class="main__input-group">
+                <label for="hora" class="main__label">Hora:</label>
+                <input type="time" name="hora" id="hora" class="main__input main__input--hora" min="09:00" max="20:00" step="1800" required>
+            </div>
+
+            <div class="main__input-group">
+                <label for="servicios" class="main__label">Servicio a solicitar:</label>
+                <select name="servicios" id="servicios" class="main__select" required>
+                    <option value="elige" disabled selected hidden>Elige un servicio</option>
+                    <option value="corte">Corte de pelo</option>
+                    <option value="peinado">Peinado</option>
+                    <option value="color">Color con barro</option>
+                    <option value="tratamiento">Tratamiento capilar</option>
+                </select>
+            </div>
+
+            <div class="main__input-group">
+                <label for="comentarios" class="main__label">Comentarios adicionales:</label>
+                <textarea name="comentarios" id="comentarios" class="main__textarea" placeholder="Dudas, ruegos o sugerencias"></textarea>
+            </div>
+
+            <div class="main__input-group">
+                <button type="submit" class="main__button">Solicitar cita</button> <!-- Botón para enviar -->
+            </div>
+        </div>
+    </form>
+</main>
+
+<footer class="footer"> <!-- Inicio el pie de página -->
+    <div class="footer__fondo"> <!-- Añado el fondo del footer -->
+        <img src="assets/marmol.webp" alt="marmol" class="header__img">
+    </div>
+    <div class="footer__contenido">
+        <div class="footer__sub"> <!-- Sección de suscripción -->
+            <h3 class="footer__h3">¡Sé el primero en enterarte!</h3>
+            <p> Suscríbete para recibir las últimas noticias y ofertas exclusivas de Esencia de Barro. <br> Esencia de Barro utilizará tus datos personales <br> tal y como se describe en nuestra Política de privacidad.</p>
+
+            <div class="footer__email">
+                <input type="email" id="email" name="footer__email" placeholder="Correo electrónico" required>
+            </div>
+            
+            <div class="footer__butto">
+                <button type="submit" class="footer__button">Suscribirse</button> <!-- Botón de suscripción -->
+            </div>
+        </div>
+
+        <section class="footer__info"> <!-- Información de contacto y mapa -->
+            <div class="footer__logo"> 
+                <div class="footer__redes">
+                    <div class="footer__red"> 
+                        <a href="https://www.instagram.com/miusuario" target="_blank" rel="noopener noreferrer" class="footer__item">
+                            <img src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="Instagram" class="footer__redes-icono">
+                        </a>
+                        <p class="footer__texto"> @esenciadebarro </p> 
+                    </div>
+                     
+                    <div class="footer__red"> 
+                        <a href="https://www.facebook.com/mipagina" target="_blank" rel="noopener noreferrer" class="footer__item">
+                            <img src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook" class="footer__redes-icono">
+                        </a>
+                        <p class="footer__texto"> /esenciadebarro </p>
+                    </div>
+                      
+                    <div class="footer__red">
+                        <a href="https://wa.me/34600111222" target="_blank" rel="noopener noreferrer" class="footer__item">
+                            <img src="https://img.icons8.com/ios/50/whatsapp--v1.png" alt="WhatsApp" class="footer__redes-icono">
+                        </a>
+                        <p class="footer__texto"> +34 622606142 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__maps"> 
+                <iframe class="footer__img" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7811.70558718969!2d-3.6444005041384897!3d40.528966560898915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAv.%20Bruselas%2C%2021%20-%20A-1%20Salida%2016%2C%20LA%20VEGA%2C%2028108%2C%20Alcobendas%20(Madrid)!5e1!3m2!1ses!2ses!4v1752347789858!5m2!1ses!2ses" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p class="footer__direccion"> Av. Bruselas, 21 - A-1 Salida 16, LA VEGA, 28108, Alcobendas (Madrid) </p> 
+            </div>
+        </section>
+    </div>
+</footer>
+</body>
+</html>

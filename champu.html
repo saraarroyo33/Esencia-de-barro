@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champú</title>
+    <!-- Aquí enlazo mi archivo CSS para los estilos -->
+    <link rel="stylesheet" href="css/champu.css">
+    <!-- Y también mi archivo JS, con defer para que se cargue después del HTML -->
+    <script src="js/champu.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+
+        <!-- Esta es la imagen de fondo que cubre todo el header -->
+        <div class="header__fondo">
+            <img src="assets/jabones.webp" alt="portada" class="header__portada"> 
+        </div>
+
+        <!-- Título principal centrado -->
+        <h1 class="header__h1">Champú</h1>
+
+        <!-- Barra donde pongo el logo y la navegación -->
+        <div class="header__barra">
+        
+            <!-- Logo que también sirve para activar el menú -->
+            <img src="assets/logo.webp" alt="logo" class="header__logo" id="logo">
+           
+            <!-- Menú de navegación oculto inicialmente -->
+            <nav class="header__nav" id="navMenu">
+                <ul class="header__ul">
+                  <!-- Cada li es un enlace a otra página -->
+                  <li class="header__li"> <a href="barros.html">Barros</a></li>
+                  <li class="header__li"> <a href="conocenos.html">Conocenos</a></li>
+                  <li class="header__li"> <a href="citas.html">Citas</a></li>
+                </ul> 
+            </nav>
+           
+        </div>  
+        
+    </header>
+
+    <main>
+       
+        <section class="main__galeria"> <!-- Aquí pongo mi galería con los champús -->
+
+            <!-- Cada sección es un champú diferente -->
+            <section class="main__champus">
+                <!-- Imagen del champú con coco y argán -->
+                <div class="main__imagen-coco">
+                    <img src="assets/coc y argan.webp" alt="coco" class="main__imagen">
+                    <!-- Texto que aparece al hacer hover sobre la imagen -->
+                    <div class="main__texto-coco">
+                        <p>El champú de coco y argán hidrata en profundidad, aporta brillo natural y suaviza el cabello desde la raíz hasta las puntas. Ideal para cabellos secos o dañados, fortalece la fibra capilar y controla el encrespamiento sin apelmazar.</p>
+                    </div>
+                </div>
+                
+                <!-- Nombre y descripción corta del champú -->
+                <div class="main__titulo">
+                    <div class="main__coco">Coco y Argán</div>
+                    <div class="main__mejora-coco">Cabello seco y dañado</div>
+                </div>
+            </section>
+
+            <!-- Repito estructura para cada champú, solo cambio las clases y textos -->
+            <section class="main__champus">
+                <div class="main__imagen-cacao">
+                    <img src="assets/ccao.webp" alt="cacao" class="main__imagen">
+                    <div class="main__texto-cacao">
+                        <p>El champú con extracto de cacao nutre intensamente y mejora la elasticidad del cabello, dejándolo más suave, fuerte y brillante. Rico en antioxidantes y vitaminas, es ideal para revitalizar cabellos secos o quebradizos, aportando protección natural sin apelmazar.</p>
+                    </div>
+                </div>
+                
+                <div class="main__titulo">
+                    <div class="main__cacao">Cacao</div>
+                    <div class="main__mejora-cacao">Cabello fino o sin volumen</div>
+                </div>
+            </section>
+
+            <!-- Y así con los demás champús -->
+
+            <!-- Aguacate -->
+            <section class="main__champus">
+                <div class="main__imagen-aguacate">
+                   <img src="assets/aguacate.webp" alt="aguacate" class="main__imagen">
+                    <div class="main__texto-aguacate">
+                        <p>El aguacate hidrata y nutre el cabello, gracias a sus vitaminas y ácidos grasos. Es ideal para cabellos secos, dañados o rizados, ya que los fortalece y mejora su suavidad. No se recomienda para cabellos muy finos o grasos, ya que puede apelmazarlos.</p>
+                    </div>
+                </div>
+                
+                <div class="main__titulo">
+                    <div class="main__aguacate">Aguacate</div>
+                    <div class="main__mejora-aguacate">Cabello seco y dañados </div>
+                </div>
+            </section>
+
+            <!-- Almendras -->
+            <section class="main__champus">
+                <div class="main__imagen-almendra">
+                    <img src="assets/almendras y karite.webp" alt="almendra" class="main__imagen">
+                    <div class="main__texto-almendra">
+                        <p>Las almendras son ricas en vitaminas E, B y ácidos grasos, lo que las hace excelentes para fortalecer el cabello, prevenir la caída y mejorar su brillo. Son ideales para cabellos secos, dañados y con frizz, ya que hidratan y suavizan. También ayudan a mejorar el cuero cabelludo, estimulando el crecimiento del cabello.</p>
+                    </div>
+                </div>
+                
+                <div class="main__titulo">
+                    <div class="main__almendra">Almendras</div>
+                    <div class="main__mejora-almendra">Cabello con frizz </div>
+                </div>
+            </section>
+
+            <!-- Jengibre y miel -->
+            <section class="main__champus">
+                <div class="main__imagen-jengibre">
+                    <img src="assets/jengibre y miel.webp" alt="jengibre" class="main__imagen">
+                    <div class="main__texto-jengibre">
+                        <p>El jengibre estimula la circulación del cuero cabelludo, promoviendo el crecimiento del cabello, mientras que la miel hidrata y suaviza. Juntos, ayudan a fortalecer el cabello, prevenir la caída y mejorar su brillo. Esta combinación es ideal para cabellos débiles o que necesitan nutrición extra.</p>
+                    </div>
+                </div>
+                
+                <div class="main__titulo">
+                    <div class="main__jengibre">Jengibre y miel</div>
+                    <div class="main__mejora-jengibre">Cabello débil</div>
+                </div>
+            </section>
+
+            <!-- Lavanda y jojoba -->
+            <section class="main__champus">
+                <div class="main__imagen-lavanda">
+                    <img src="assets/lavanda y jojoba.webp" alt="lavanda" class="main__imagen">
+                    <div class="main__texto-lavanda">
+                        <p>La lavanda tiene propiedades calmantes y antibacterianas, lo que ayuda a mantener el cuero cabelludo sano y a prevenir la caída del cabello. El aceite de jojoba hidrata y nutre, equilibrando la producción de sebo. Juntos, son perfectos para cabellos grasos, secos o con problemas de caspa, ya que equilibran el cuero cabelludo y mejoran la salud del cabello.</p>
+                    </div>
+                </div>
+                
+                <div class="main__titulo">
+                    <div class="main__lavanda">Lavanda y jojoba</div>
+                    <div class="main__mejora-lavanda">Cabello con caspa</div>
+                </div>
+            </section>
+
+            <!-- Sal -->
+            <section class="main__champus">
+                <div class="main__imagen-sal">
+                    <img src="assets/sal.webp" alt="sal" class="main__imagen">
+                    <div class="main__texto-sal">
+                        <p>La sal exfolia el cuero cabelludo, eliminando células muertas y promoviendo la circulación, lo que puede estimular el crecimiento del cabello. Además, puede ayudar a controlar el exceso de grasa en el cuero cabelludo. Sin embargo, no es recomendable usarla con frecuencia, ya que puede resecar el cabello. Es ideal para cabellos grasos o con acumulación de productos.</p>
+                    </div>
+                </div>
+                
+                <div class="main__titulo">
+                    <div class="main__sal">Sal</div>
+                    <div class="main__mejora-sal">Cabello graso</div>
+                </div>
+            </section>
+
+            <!-- Miel y avena -->
+            <section class="main__champus">
+                <div class="main__imagen-miel">
+                    <img src="assets/miel y avena.webp" alt="miel" class="main__imagen">
+                    <div class="main__texto-miel">
+                        <p>La miel hidrata y suaviza el cabello, mientras que la avena tiene propiedades calmantes y antiinflamatorias. Juntas, ayudan a nutrir y reparar el cabello dañado, dejándolo suave y brillante. Esta combinación es ideal para cabellos secos o sensibles, ya que proporciona hidratación y alivio al cuero cabelludo.</p>
+                    </div>
+                </div>
+                
+                <div class="main__titulo">
+                    <div class="main__sal">Miel y avena</div>
+                    <div class="main__mejora-miel">Cabello seco o sensible</div>
+                </div>
+            </section>
+
+        </section>  
+    </main>
+
+    <footer class="footer"> 
+
+        <!-- Fondo de mármol para el footer -->
+        <div class="footer__fondo">
+            <img src="assets/marmol.webp" alt="marmol" class="header__img">
+        </div>
+
+        <div class="footer__contenido">
+            <!-- Suscripción al newsletter -->
+            <div class="footer__sub">
+                <h3 class="footer__h3">¡Sé el primero en enterarte!</h3>
+                <p>Suscríbete para recibir las últimas noticias y ofertas exclusivas de Esencia de Barro. <br> Esencia de Barro utilizará tus datos personales tal y como se describe en nuestra Política de privacidad.</p>
+
+                <div class="footer__email">
+                    <input type="email" id="email" name="footer__email" placeholder="Correo electrónico" required>
+                </div>
+                
+                <div class="footer__butto">
+                    <button type="submit" class="footer__button">Suscribirse</button>
+                </div>
+            </div>
+    
+            <section class="footer__info">
+                <!-- Redes sociales con iconos y enlaces -->
+                <div class="footer__logo"> 
+                    <div class="footer__redes">
+            
+                      <div class="footer__red"> <!-- Instagram -->
+                          <a href="https://www.instagram.com/miusuario" target="_blank" rel="noopener noreferrer" class="footer__item">
+                            <img src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="Instagram" class="footer__redes-icono">
+                          </a>
+                          <p class="footer__texto">@esenciadebarro</p> 
+                      </div>
+                     
+                      <div class="footer__red"> <!-- Facebook -->
+                          <a href="https://www.facebook.com/mipagina" target="_blank" rel="noopener noreferrer" class="footer__item">
+                            <img src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="Facebook" class="footer__redes-icono">
+                          </a>
+                          <p class="footer__texto">/esenciadebarro</p>
+                      </div>
+                      
+                      <div class="footer__red"> <!-- WhatsApp -->
+                          <a href="https://wa.me/34600111222" target="_blank" rel="noopener noreferrer" class="footer__item">
+                            <img src="https://img.icons8.com/ios/50/whatsapp--v1.png" alt="WhatsApp" class="footer__redes-icono">
+                          </a>
+                          <p class="footer__texto">+34 622606142</p>
+                      </div>
+            
+                    </div>
+                </div>
+            
+                <div class="footer__maps"> 
+                     <!-- Aquí integro el mapa con la ubicación -->
+                     <iframe class="footer__img" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7811.70558718969!2d-3.6444005041384897!3d40.528966560898915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAv.%20Bruselas%2C%2021%20-%20A-1%20Salida%2016%2C%20LA%20VEGA%2C%2028108%2C%20Alcobendas%20(Madrid)!5e1!3m2!1ses!2ses!4v1752347789858!5m2!1ses!2ses" 
+                       width="600" 
+                       height="450" 
+                       style="border:0;" 
+                       allowfullscreen="" 
+                       loading="lazy" 
+                       referrerpolicy="no-referrer-when-downgrade">
+                     </iframe>
+            
+                     <!-- Dirección debajo del mapa -->
+                     <p class="footer__direccion">Av. Bruselas, 21 - A-1 Salida 16, LA VEGA, 28108, Alcobendas (Madrid)</p> 
+                </div>
+            
+            </section>
+        </div>
+        
+    </footer>
+      
+</body>
+</html>
